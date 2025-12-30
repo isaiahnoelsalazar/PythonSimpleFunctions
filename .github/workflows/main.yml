@@ -5,7 +5,8 @@ on: [push]
 jobs:
   build_wheel:
     runs-on: ubuntu-latest
-
+    outputs:
+      version: ${{ steps.get_version.outputs.VERSION }}
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python
