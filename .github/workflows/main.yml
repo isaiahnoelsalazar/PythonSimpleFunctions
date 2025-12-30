@@ -21,13 +21,19 @@ jobs:
     - name: Build wheel
       run: python -m build
 
+    - name: Get version from pyproject.toml
+      id: get_version
+      run: |
+        VERSION=$(grep -m 1 '^version = ' pyproject.toml | cut -d '"' -f 2)
+        echo "VERSION=$VERSION" >> $GITHUB_ENV
+
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: PythonSimpleFunctions-v1.0.0
+        name: PythonSimpleFunctions-v${{ env.VERSION }}
         path: dist/*.whl
 
-    - name: Publish package distributions to PyPI
+    - name: Publish Version ${{ env.VERSION }} to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         user: __token__
