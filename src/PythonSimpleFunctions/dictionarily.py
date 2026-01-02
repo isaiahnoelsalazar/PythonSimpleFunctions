@@ -16,7 +16,7 @@ class Dictionarily:
                 a += 1
         self.content = dict(temp)
     
-    def sortNumbersFirst(self):
+    def sort_numbers_first(self):
         a = 0
         temp = list(self.content.items())
         while a < len(temp) - 1:

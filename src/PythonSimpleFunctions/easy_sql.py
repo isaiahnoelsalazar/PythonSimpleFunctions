@@ -2,7 +2,7 @@ import sqlite3
 
 
 class EasySQL:
-    def createTable(self, dbname: str, table_name: str, columns: list):
+    def create_table(self, dbname: str, table_name: str, columns: list):
         connection = sqlite3.connect(dbname + ".db")
         sql_query = "CREATE TABLE IF NOT EXISTS " + table_name + "("
         for a in columns:
@@ -12,15 +12,15 @@ class EasySQL:
         connection.cursor().execute(sql_query)
         connection.commit()
 
-    def printTable(self, dbname: str, table_name: str):
+    def print_table(self, dbname: str, table_name: str):
         connection = sqlite3.connect(dbname + ".db")
         print(connection.cursor().execute("SELECT * FROM " + table_name).fetchall())
 
-    def getTableValues(self, dbname: str, table_name: str):
+    def get_table_values(self, dbname: str, table_name: str):
         connection = sqlite3.connect(dbname + ".db")
         return connection.cursor().execute("SELECT * FROM " + table_name).fetchall()
 
-    def insertToTable(self, dbname: str, table_name: str, values: list):
+    def insert_to_table(self, dbname: str, table_name: str, values: list):
         connection = sqlite3.connect(dbname + ".db")
         sql_query = "INSERT INTO " + table_name + "("
         for a in values:
@@ -34,19 +34,19 @@ class EasySQL:
         connection.cursor().execute(sql_query)
         connection.commit()
 
-    def deleteFromTable(self, dbname: str, table_name: str, columnValuePair: dict):
+    def delete_from_table(self, dbname: str, table_name: str, columnValuePair: dict):
         connection = sqlite3.connect(dbname + ".db")
         sql_query = "DELETE FROM " + table_name + " WHERE " + list(columnValuePair.items())[0][0] + "='" + list(columnValuePair.items())[0][1] + "'"
         connection.cursor().execute(sql_query)
         connection.commit()
     
-    def clearTable(self, dbname: str, table_name: str):
+    def clear_table(self, dbname: str, table_name: str):
         connection = sqlite3.connect(dbname + ".db")
         sql_query = "DELETE FROM " + table_name
         connection.cursor().execute(sql_query)
         connection.commit()
     
-    def deleteTable(self, dbname: str, table_name: str):
+    def delete_table(self, dbname: str, table_name: str):
         connection = sqlite3.connect(dbname + ".db")
         sql_query = "DROP TABLE " + table_name
         connection.cursor().execute(sql_query)
