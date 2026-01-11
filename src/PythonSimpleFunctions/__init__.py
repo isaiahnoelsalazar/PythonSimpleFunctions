@@ -3,5 +3,5 @@ from .cipher import caesar_cipher, decipher_caesar_cipher, decipher_keyword_ciph
 from .convert import base64_to_string, string_to_base64
 from .dictionarily import Dictionarily
 from .easy_sql import EasySQL
-from .get_first_column_from_all_sheets import get_first_column_from_all_sheets_function
+from .excellent_reader import get_first_column_from_all_sheets, get_first_column_from_sheet_index
 from .stackily import Stackily

@@ -1,6 +1,6 @@
 [project]
 name = "PythonSimpleFunctions"
-version = "1.0.3"
+version = "1.0.4"
 description = "PyPI package designed to make development in Python easier."
 dependencies = [
     "openpyxl",
