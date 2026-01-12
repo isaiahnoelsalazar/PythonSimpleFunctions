@@ -1,3 +1,4 @@
+from .builder_for_flask_jsonify import bake
 from .check import has_numbers, has_numbers2, has_spaces, has_spaces2, has_symbols, has_symbols2
 from .cipher import caesar_cipher, decipher_caesar_cipher, decipher_keyword_cipher, keyword_cipher, transposition_cipher
 from .convert import base64_to_string, string_to_base64
