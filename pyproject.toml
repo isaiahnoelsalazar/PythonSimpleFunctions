@@ -1,6 +1,6 @@
 [project]
 name = "PythonSimpleFunctions"
-version = "1.0.9"
+version = "1.0.10"
 description = "PyPI package designed to make development in Python easier."
 readme = "README.md"
 authors = [

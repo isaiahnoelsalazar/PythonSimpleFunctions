@@ -65,19 +65,19 @@ a = EasySQL()
 columns = [{"fname": "text"}, {"lname": "text"}]
 
 # Create specified table
-a.createTable("sample", "sampletable", columns)
+a.create_table("sample", "sampletable", columns)
 
 # Define the values to be inserted
 values = [{"fname": "Isaiah"}, {"lname": "Salazar"}]
 values1 = [{"fname": "Saia"}, {"lname": "Razalas"}]
 
 # Insert the values into specified table
-a.insertToTable("sample", "sampletable", values)
-a.insertToTable("sample", "sampletable", values1)
+a.insert_to_table("sample", "sampletable", values)
+a.insert_to_table("sample", "sampletable", values1)
 
 # Print the values in specified table
-print(a.getTableValues("sample", "sampletable"))
+print(a.get_table_values("sample", "sampletable"))
 
 # Delete a column-value pair from a specified table
-a.deleteFromTable("sample", "sampletable", {"fname": "Saia"})
+a.delete_from_table("sample", "sampletable", {"fname": "Saia"})
 '''
